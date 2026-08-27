@@ -1,0 +1,6 @@
+{
+  "name": "Aryan Sabharwal — Digital Creator & Developer",
+  "description": "A cinematic, premium dark portfolio website for Aryan Sabharwal, digital creator and developer.",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
