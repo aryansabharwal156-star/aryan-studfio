@@ -11,11 +11,11 @@ export default function Navbar({ onOpenAI }: NavbarProps) {
 
   const navLinks = [
     { label: 'Work', href: '#work' },
-    { label: 'Studio', href: '#studio' },
-    { label: 'Capabilities', href: '#capabilities' },
-    { label: 'Process', href: '#process' },
+    { label: 'Services', href: '#services' },
     { label: 'AI Tech', href: '#ai-tech' },
-    { label: 'Journal', href: '#journal' },
+    { label: 'About', href: '#about' },
+    { label: 'Process', href: '#process' },
+    { label: 'FAQ', href: '#faq' },
     { label: 'Contact', href: '#contact' },
   ];
 
@@ -30,13 +30,14 @@ export default function Navbar({ onOpenAI }: NavbarProps) {
   return (
     <>
       <nav className="fixed top-4 left-0 right-0 z-50 flex items-center justify-between px-6 lg:px-16 pointer-events-none">
-        {/* Left logo: liquid-glass circle with italic 'a' */}
+        {/* Left logo: liquid-glass pill with italic 'a' and Aryvanta name */}
         <a
           href="#"
-          className="liquid-glass h-12 w-12 rounded-full flex items-center justify-center pointer-events-auto transition-transform hover:scale-105"
-          aria-label="Home"
+          className="liquid-glass h-12 px-4 rounded-full flex items-center gap-2.5 pointer-events-auto transition-transform hover:scale-105"
+          aria-label="Aryvanta Home"
         >
           <span className="font-heading italic text-2xl text-white select-none">a</span>
+          <span className="font-heading italic tracking-tight text-lg text-white font-medium">Aryvanta</span>
         </a>
 
         {/* Center Nav Pill for Desktop */}

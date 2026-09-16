@@ -1,6 +1,6 @@
 {
-  "name": "Aryan Sabharwal — Digital Creator & Developer",
-  "description": "A cinematic, premium dark portfolio website for Aryan Sabharwal, digital creator and developer.",
+  "name": "Aryvanta | AI, Web, SaaS & Digital Solutions",
+  "description": "Aryvanta is a modern digital technology and creative studio founded by Aryan Sabharwal. We engineer AI automation, AI voice agents, websites, landing pages, SaaS tools, web applications, and commercial motion design for clients globally.",
   "requestFramePermissions": ["microphone"],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

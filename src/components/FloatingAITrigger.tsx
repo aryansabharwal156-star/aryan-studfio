@@ -54,7 +54,7 @@ export default function FloatingAITrigger({ onOpenAI }: FloatingAITriggerProps) 
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
         className="group relative flex items-center gap-3 px-5 py-3.5 rounded-full liquid-glass-strong hover:bg-white/15 text-white border border-white/25 shadow-2xl transition-all duration-300 hover:scale-[1.03] cursor-pointer"
-        aria-label="Open Aryan Sabharwal AI Studio Assistant"
+        aria-label="Open Aryvanta AI Studio Assistant"
       >
         {/* Glow Ring */}
         <div className="absolute -inset-0.5 rounded-full bg-gradient-to-r from-white/20 to-white/5 opacity-50 blur group-hover:opacity-100 transition-opacity" />

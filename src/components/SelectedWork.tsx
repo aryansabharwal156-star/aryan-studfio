@@ -74,9 +74,9 @@ export default function SelectedWork({ onSelectProject }: SelectedWorkProps) {
             </div>
 
             <h2 className="font-heading italic text-5xl sm:text-6xl lg:text-[4.5rem] text-white tracking-[-2px] leading-[0.95]">
-              Ideas turned into{' '}
+              Selected Work &amp;{' '}
               <span className="text-white/80">
-                enduring experiences.
+                Flagship Deployments.
               </span>
             </h2>
 

@@ -4,13 +4,15 @@ import { motion } from 'framer-motion';
 interface BlurTextProps {
   text: string;
   className?: string;
+  as?: 'h1' | 'div';
 }
 
-export default function BlurText({ text, className = '' }: BlurTextProps) {
+export default function BlurText({ text, className = '', as = 'div' }: BlurTextProps) {
   const words = text.split(' ');
+  const Component = as;
 
   return (
-    <div
+    <Component
       className={className}
       style={{
         display: 'flex',
@@ -46,6 +48,6 @@ export default function BlurText({ text, className = '' }: BlurTextProps) {
           {word}
         </motion.span>
       ))}
-    </div>
+    </Component>
   );
 }

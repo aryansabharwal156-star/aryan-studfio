@@ -45,9 +45,10 @@ export default function ContactSection({ initialService, onOpenAI }: ContactSect
   const availableServices = [
     'Websites',
     'Landing Pages',
-    'SaaS Design',
-    'UGC Ads',
-    'AI-powered Experience'
+    'SaaS Tools',
+    'AI Voice Agents',
+    'AI Automation',
+    'Motion Commercial Ads'
   ];
 
   const timelines = [
@@ -137,14 +138,14 @@ export default function ContactSection({ initialService, onOpenAI }: ContactSect
               </div>
 
               <h2 className="font-heading italic text-5xl sm:text-6xl lg:text-[4.5rem] text-white tracking-[-2px] leading-[0.95]">
-                Let&apos;s build something{' '}
+                Start a Project with{' '}
                 <span className="text-white/80">
-                  remarkable.
+                  Aryvanta.
                 </span>
               </h2>
 
               <p className="text-base sm:text-lg text-white/80 mt-5 font-body font-light leading-relaxed">
-                Have a new brand to launch, a flagship web experience to design, or a complex software UI to rebuild? Tell us about your goals.
+                Contact Aryvanta for Websites, Landing Pages, SaaS Tools, AI Voice Agents, AI Automation, or Motion Commercial Ads. Tell us about your goals.
               </p>
             </div>
 
@@ -410,17 +411,30 @@ export default function ContactSection({ initialService, onOpenAI }: ContactSect
                     </div>
                   </div>
 
-                  {/* Submit Button */}
-                  <button
-                    type="submit"
-                    className="w-full py-4 rounded-full bg-white hover:bg-white/90 text-black text-sm font-body font-medium flex items-center justify-center gap-2 transition-all shadow-xl cursor-pointer"
-                  >
-                    <span>Send Project Proposal</span>
-                    <ArrowUpRight className="w-4 h-4" />
-                  </button>
+                  {/* CTAs: Primary Start a Project & Secondary WhatsApp Inquiry */}
+                  <div className="space-y-3 pt-2">
+                    <button
+                      type="submit"
+                      className="w-full py-4 rounded-full bg-white hover:bg-white/90 text-black text-sm font-body font-medium flex items-center justify-center gap-2 transition-all shadow-xl cursor-pointer"
+                    >
+                      <span>Start a Project</span>
+                      <ArrowUpRight className="w-4 h-4" />
+                    </button>
+
+                    <a
+                      href="https://wa.me/916396438091"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full py-3 rounded-full liquid-glass hover:bg-white/10 text-white text-xs font-body font-medium flex items-center justify-center gap-2 transition-all border border-white/15 cursor-pointer"
+                    >
+                      <MessageCircle className="w-3.5 h-3.5 text-white/80" />
+                      <span>WhatsApp Inquiry: +91 6396438091</span>
+                      <ArrowUpRight className="w-3 h-3 text-white/60" />
+                    </a>
+                  </div>
 
                   <div className="text-center text-[11px] text-white/50 font-body">
-                    We sign mutual NDAs upon request before scoping calls.
+                    Mutual NDAs signed upon request before scoping calls. Direct founder access.
                   </div>
                 </form>
               )}

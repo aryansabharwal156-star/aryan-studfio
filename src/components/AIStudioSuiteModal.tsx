@@ -62,7 +62,7 @@ export default function AIStudioSuiteModal({
     {
       id: 'welcome',
       sender: 'model',
-      text: "Hello, I am Aryan's AI Studio Assistant. Whether you want to evaluate project feasibility, explore design systems, check development pricing, or brainstorm architectural tech stacks, I'm here to assist.",
+      text: "Hello, I am Aryvanta's AI Studio Assistant. Whether you want to evaluate project feasibility, explore design systems, check development pricing, or brainstorm architectural tech stacks, I'm here to assist.",
       timestamp: 'Just now',
       modelUsed: 'gemini-3.5-flash',
     },
@@ -88,7 +88,7 @@ export default function AIStudioSuiteModal({
   const [voiceInputText, setVoiceInputText] = useState('');
   const [voiceLoading, setVoiceLoading] = useState(false);
   const [voiceVoice, setVoiceVoice] = useState<'Zephyr' | 'Kore' | 'Puck'>('Zephyr');
-  const [voiceResponseText, setVoiceResponseText] = useState<string>('Tap "Speak to Studio AI" to begin a real-time voice conversation with Aryan\'s studio intelligence.');
+  const [voiceResponseText, setVoiceResponseText] = useState<string>('Tap "Speak to Studio AI" to begin a real-time voice conversation with Aryvanta\'s studio intelligence.');
   const [isPlayingAudio, setIsPlayingAudio] = useState(false);
   const recognitionRef = useRef<any>(null);
   const audioContextRef = useRef<AudioContext | null>(null);
@@ -376,7 +376,7 @@ export default function AIStudioSuiteModal({
             <div>
               <div className="flex items-center gap-2">
                 <span className="font-heading italic text-xl text-white tracking-tight">
-                  Aryan Sabharwal
+                  Aryvanta
                 </span>
                 <span className="text-xs text-white/60 font-body uppercase tracking-wider">
                   // AI Studio Suite
@@ -384,7 +384,7 @@ export default function AIStudioSuiteModal({
               </div>
               <div className="flex items-center gap-2 text-[11px] text-white/70 font-body">
                 <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
-                <span>Multi-Model Gemini Intelligence & Live Grounding</span>
+                <span>Founded by Aryan Sabharwal &bull; Intelligence &amp; Live Scoping</span>
               </div>
             </div>
           </div>
@@ -397,7 +397,7 @@ export default function AIStudioSuiteModal({
               rel="noopener noreferrer"
               className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-body liquid-glass hover:bg-white/10 text-white/90 border border-white/10 transition-colors"
             >
-              <span>WhatsApp Aryan</span>
+              <span>WhatsApp Inquiry</span>
               <ExternalLink className="w-3 h-3 text-white/60" />
             </a>
 

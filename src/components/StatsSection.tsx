@@ -13,7 +13,7 @@ const statsData: StatItem[] = [
     target: 4,
     suffix: '+',
     label: 'Core Digital Disciplines',
-    sublabel: 'Websites, Stores, SaaS UI & Kinetic UGC'
+    sublabel: 'Websites, SaaS Tools, AI Automation & Motion Ads'
   },
   {
     target: 140,
@@ -24,8 +24,8 @@ const statsData: StatItem[] = [
   {
     target: 2026,
     suffix: '',
-    label: 'Autonomous Studio Practice',
-    sublabel: 'AI-native workflows & modern web speed',
+    label: 'Aryvanta Studio Practice',
+    sublabel: 'AI-native workflows & client conversion systems',
     isYear: true
   }
 ];

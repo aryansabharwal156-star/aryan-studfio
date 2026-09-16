@@ -70,18 +70,18 @@ export default function AiTechSection({ onOpenAI }: AiTechSectionProps) {
         <div className="mb-16 sm:mb-20 max-w-3xl">
           <div className="text-xs font-body uppercase tracking-[0.2em] text-white/70 mb-3 flex items-center gap-2">
             <span className="w-1.5 h-1.5 rounded-full bg-white" />
-            <span>// AI-Native Workflow</span>
+            <span>// AI Automation & Voice Agents</span>
           </div>
 
           <h2 className="font-heading italic text-5xl sm:text-6xl lg:text-[4.5rem] text-white tracking-[-2px] leading-[0.95]">
-            Design intuition,{' '}
+            AI Automation &amp;{' '}
             <span className="text-white/80">
-              amplified by AI.
+              Conversational Voice Systems.
             </span>
           </h2>
 
           <p className="text-base sm:text-lg text-white/80 mt-4 font-body font-light leading-relaxed">
-            We leverage modern generative intelligence to supercharge research, prototype rapidly, and produce cinematic assets &mdash; with human taste always directing the outcome.
+            Aryvanta engineers production-grade AI automation pipelines, autonomous agent workflows, and low-latency voice agents &mdash; with human taste and reliability directing every outcome.
           </p>
         </div>
 
@@ -190,7 +190,7 @@ export default function AiTechSection({ onOpenAI }: AiTechSectionProps) {
                 <span>// Live Gemini 3 Engine Testbed</span>
               </div>
               <h3 className="font-heading italic text-2xl sm:text-3xl text-white tracking-tight">
-                Experience Aryan's AI Studio Intelligence Live
+                Experience Aryvanta's AI Studio Intelligence Live
               </h3>
               <p className="text-xs sm:text-sm text-white/80 font-body font-light">
                 Engage in multi-turn chat, test real-time Google Search grounding, speak with the live voice concierge, or generate instant architectural scopes.

@@ -12,16 +12,16 @@ export const servicesData: ServiceItem[] = [
   {
     id: 'websites',
     number: '01',
-    title: 'Websites',
+    title: 'Websites & Landing Pages',
     tagline: 'High-conversion, cinematic web platforms',
     description:
-      'Marketing and business websites designed to make a strong first impression, communicate clearly, and turn visitors into conversations.',
+      'Marketing and business websites designed to make a strong first impression, communicate clearly, and turn visitors into qualified clients.',
     accent: 'Rust',
     accentColor: 'text-[#B3521F]',
     accentBg: 'bg-[#B3521F]',
     accentBorder: 'border-[#B3521F]',
     features: [
-      'Custom bespoke design',
+      'Custom bespoke design & art direction',
       'Mobile-first responsive architecture',
       'Ultra-fast performance & 95+ Lighthouse',
       'Conversion-focused copywriting & layouts',
@@ -39,7 +39,7 @@ export const servicesData: ServiceItem[] = [
   {
     id: 'landing-pages',
     number: '02',
-    title: 'Landing Pages',
+    title: 'Landing Page Development',
     tagline: 'High-converting launchpads tailored for scale & speed',
     description:
       'High-impact landing pages engineered for maximum conversion, product launches, lead generation, and brand storytelling.',
@@ -66,8 +66,8 @@ export const servicesData: ServiceItem[] = [
   {
     id: 'saas',
     number: '03',
-    title: 'SaaS Design',
-    tagline: 'Intuitive UX systems for modern software',
+    title: 'SaaS & Web Applications',
+    tagline: 'Intuitive UX systems for modern software products',
     description:
       'Clean interfaces and user flows for software products, dashboards, AI tools, and web applications.',
     accent: 'Indigo',
@@ -93,10 +93,10 @@ export const servicesData: ServiceItem[] = [
   {
     id: 'ugc',
     number: '04',
-    title: 'UGC Ads',
+    title: 'Motion Design & Commercial Ads',
     tagline: 'Thumb-stopping vertical creative that sells',
     description:
-      'Short-form vertical advertising designed around strong hooks, native-feeling storytelling, and attention in the first few seconds.',
+      'Short-form vertical advertising and motion design engineered around strong hooks, native-feeling storytelling, and rapid viewer engagement.',
     accent: 'Rose',
     accentColor: 'text-[#AD3A61]',
     accentBg: 'bg-[#AD3A61]',

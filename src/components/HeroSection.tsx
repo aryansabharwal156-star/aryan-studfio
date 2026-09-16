@@ -30,51 +30,62 @@ export default function HeroSection({ onOpenAI }: HeroSectionProps) {
       <div className="relative z-10 flex flex-col h-full items-center justify-center pt-24 px-4 text-center">
         {/* Badge */}
         <motion.div {...motionProps(0.4)}>
-          <div className="liquid-glass rounded-full px-3 py-1.5 inline-flex items-center gap-2 text-xs text-white/90 font-body">
-            <span className="bg-white text-black px-2 py-0.5 rounded-full text-[11px] font-semibold">
-              New
+          <div className="liquid-glass rounded-full px-3.5 py-1.5 inline-flex items-center gap-2 text-xs text-white/90 font-body">
+            <span className="bg-white text-black px-2 py-0.5 rounded-full text-[11px] font-semibold tracking-wider">
+              ARYVANTA
             </span>
-            <span>Booking Q3 2026 engagements -- limited capacity</span>
+            <span className="text-white/80">AI • Web • SaaS • Creative Technology</span>
           </div>
         </motion.div>
 
-        {/* Headline */}
-        <div className="mt-6 max-w-3xl">
+        {/* Primary Homepage H1 */}
+        <div className="mt-6 max-w-4xl">
           <BlurText
-            text="Crafted Digital Experiences Built to Outlast Trends"
-            className="text-6xl md:text-7xl lg:text-[5.5rem] font-heading italic text-white leading-[0.8] tracking-[-4px]"
+            as="h1"
+            text="Building Smarter Digital Experiences With AI"
+            className="text-5xl sm:text-6xl md:text-7xl lg:text-[5.25rem] font-heading italic text-white leading-[0.88] tracking-[-3px] sm:tracking-[-4px]"
           />
         </div>
 
-        {/* Subtext */}
+        {/* Subtext with Founder & Geo context */}
         <motion.p
           {...motionProps(0.8)}
-          className="mt-4 text-sm md:text-base text-white max-w-2xl font-body font-light leading-tight"
+          className="mt-4 text-sm md:text-base text-white/90 max-w-2xl font-body font-light leading-relaxed"
         >
-          We are a small studio of designers and engineers shaping brand-defining websites for ambitious companies. Precise typography, cinematic motion, and code you can be proud of.
+          Aryvanta is a modern digital technology and creative studio founded by Aryan Sabharwal. We engineer AI automation, AI voice agents, websites, landing pages, SaaS tools, web applications, and commercial motion design for clients globally from India.
         </motion.p>
 
         {/* CTA buttons */}
         <motion.div
           {...motionProps(1.1)}
-          className="mt-6 flex items-center gap-4 sm:gap-6 flex-wrap justify-center"
+          className="mt-6 flex items-center gap-3 sm:gap-4 flex-wrap justify-center"
         >
           <a
             href="#contact"
-            className="liquid-glass-strong rounded-full px-5 py-2.5 flex items-center gap-2 text-sm font-medium text-white font-body hover:bg-white/10 transition-all cursor-pointer"
+            className="liquid-glass-strong rounded-full px-5 py-2.5 flex items-center gap-2 text-sm font-medium text-white font-body hover:bg-white/10 transition-all cursor-pointer shadow-lg"
           >
             <span>Start a Project</span>
             <ArrowUpRight className="w-4 h-4" />
+          </a>
+
+          <a
+            href="https://wa.me/916396438091"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="liquid-glass rounded-full px-5 py-2.5 flex items-center gap-2 text-sm font-medium text-white font-body hover:bg-white/15 transition-all cursor-pointer border border-white/20 shadow-md"
+          >
+            <span>WhatsApp Inquiry</span>
+            <ArrowUpRight className="w-3.5 h-3.5 opacity-80" />
           </a>
 
           {onOpenAI && (
             <button
               type="button"
               onClick={onOpenAI}
-              className="liquid-glass rounded-full px-5 py-2.5 flex items-center gap-2 text-sm font-medium text-white font-body hover:bg-white/15 transition-all cursor-pointer border border-white/20 shadow-md"
+              className="flex items-center gap-1.5 text-xs sm:text-sm font-medium text-white/80 font-body hover:text-white transition-colors cursor-pointer px-3 py-2"
             >
-              <Sparkles className="w-4 h-4 text-white" />
-              <span>AI Studio Assistant</span>
+              <Sparkles className="w-3.5 h-3.5 text-white" />
+              <span>AI Assistant</span>
             </button>
           )}
 

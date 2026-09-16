@@ -55,9 +55,10 @@ export default function ServicesSection({ onSelectService }: ServicesSectionProp
   return (
     <section 
       ref={sectionRef}
-      id="studio" 
-      className="py-24 sm:py-32 px-4 sm:px-6 lg:px-16 relative bg-black overflow-hidden"
+      id="services" 
+      className="py-24 sm:py-32 px-4 sm:px-6 lg:px-16 relative bg-black overflow-hidden scroll-mt-12"
     >
+      <div id="studio" className="absolute -top-16 opacity-0 pointer-events-none" />
       {/* Highlighted Ambient Video Container with Curved Corners & Scroll Motion */}
       <motion.div 
         style={{ opacity: containerOpacity }}

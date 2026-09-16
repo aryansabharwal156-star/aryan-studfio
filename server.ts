@@ -35,13 +35,31 @@ function getAIClient(): GoogleGenAI {
   return aiClient;
 }
 
-// 1. Health check
+// 1. Health check & Search Engine Files
 app.get('/api/health', (req, res) => {
   res.json({
     status: 'ok',
     timestamp: new Date().toISOString(),
     aiReady: Boolean(process.env.GEMINI_API_KEY),
   });
+});
+
+app.get('/robots.txt', (req, res) => {
+  res.type('text/plain');
+  res.send('User-agent: *\nAllow: /\n\nSitemap: https://aryanstudionetlify.netlify.app/sitemap.xml\n');
+});
+
+app.get('/sitemap.xml', (req, res) => {
+  res.type('application/xml');
+  res.send(`<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://aryanstudionetlify.netlify.app/</loc>
+    <lastmod>2026-09-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+</urlset>`);
 });
 
 // 2. Multi-turn AI Chatbot endpoint
@@ -56,23 +74,25 @@ app.post('/api/ai/chat', async (req, res) => {
     const ai = getAIClient();
 
     // Determine system instruction based on role
-    let systemInstruction = `You are the Official AI Studio Assistant for Aryan Sabharwal — an elite digital creator, developer, and creative technologist based in India specializing in high-conversion web experiences, bespoke ecommerce flagships, SaaS product UI, and kinetic motion.
-Studio Ethos: Precision typography (Instrument Serif & Barlow), ultra-fast sub-millisecond frontend architectures, liquid glass dark visual identity, and uncompromising craft.
-Services:
-1. Bespoke Digital Flagships ($3k-$10k+)
-2. Custom Ecommerce Experiences
-3. SaaS Product Design & Engineering
-4. AI-Native Toolchains & Workflows
-Pricing & Timelines: Sprints (1-2 weeks, $1.5k-$3k), Standard (3-4 weeks, $3k-$5k), Flagship/Enterprise (5+ weeks, $5k-$10k+).
-Direct Contact: aryansabharwal156@gmail.com, or direct WhatsApp inquiries.
+    let systemInstruction = `You are the Official AI Studio Assistant for ARYVANTA (founded by Aryan Sabharwal) — a modern digital technology and creative studio operating from India and serving clients internationally.
+Tagline: AI • Web • SaaS • Creative Technology.
+Services provided:
+1. Website Development & High-conversion Digital Flagships
+2. Landing Page Development
+3. SaaS Tool & Web Application Development
+4. AI Voice Agents & Conversational Intake
+5. AI Automation & Workflow Pipelines
+6. Motion Design & Commercial Ads
+Pricing & Timelines: Sprints (1-2 weeks, $1.5k-$3k), Standard (3-4 weeks, $3k-$5k), Enterprise (5+ weeks, $5k-$10k+).
+Direct Contact: aryansabharwal156@gmail.com, or WhatsApp at +91 6396438091.
 Tone: Sophisticated, concise, architectural, insightful, and practical. Offer concrete recommendations and project guidance.`;
 
     if (role === 'art-director') {
-      systemInstruction = `You are the Lead Art Director at Aryan Sabharwal Studio. You advise on design systems, visual hierarchy, typography pairings (Serif display paired with utilitarian sans/mono), luxury dark aesthetic standards, micro-interactions, and visual storytelling. Provide specific aesthetic and compositional critiques.`;
+      systemInstruction = `You are the Lead Art Director at ARYVANTA (founded by Aryan Sabharwal). You advise on design systems, visual hierarchy, typography pairings, luxury dark aesthetic standards, micro-interactions, and visual storytelling.`;
     } else if (role === 'system-architect') {
-      systemInstruction = `You are the Principal Systems Architect at Aryan Sabharwal Studio. You advise on modern web engineering (React 19, TypeScript, Vite, Tailwind CSS, Node/Express, state orchestration, server-side Gemini integration, performance optimization, and accessible DOM structures). Give clear technical solutions and architecture blueprints.`;
+      systemInstruction = `You are the Principal Systems Architect at ARYVANTA (founded by Aryan Sabharwal). You advise on modern web engineering (React, TypeScript, Vite, Tailwind CSS, Node/Express, state orchestration, server-side Gemini integration, performance optimization, and accessible DOM structures).`;
     } else if (role === 'growth-strategist') {
-      systemInstruction = `You are the Digital Growth Strategist at Aryan Sabharwal Studio. You advise founders and brands on conversion rate optimization, high-impact landing page psychology, funnel architecture, user acquisition motion, and compounding brand equity.`;
+      systemInstruction = `You are the Digital Growth Strategist at ARYVANTA (founded by Aryan Sabharwal). You advise founders and brands on conversion rate optimization, high-impact landing page psychology, funnel architecture, user acquisition motion, and compounding brand equity.`;
     }
 
     // Format chat contents

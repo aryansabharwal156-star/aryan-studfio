@@ -25,7 +25,8 @@ export default function CapabilitiesSection() {
   ];
 
   return (
-    <section id="capabilities" className="relative min-h-screen overflow-hidden bg-black flex flex-col border-t border-white/10">
+    <section id="about" className="relative min-h-screen overflow-hidden bg-black flex flex-col border-t border-white/10 scroll-mt-12">
+      <div id="capabilities" className="absolute -top-16 opacity-0 pointer-events-none" />
       {/* Background Video */}
       <FadingVideo
         src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260622_093722_ccfc7ebf-182f-419f-8a62-2dc02db7dd9d.mp4"
@@ -33,15 +34,20 @@ export default function CapabilitiesSection() {
       />
 
       {/* Content Container */}
-      <div className="relative z-10 px-8 md:px-16 lg:px-20 pt-24 pb-10 flex flex-col min-h-screen">
+      <div className="relative z-10 px-8 md:px-16 lg:px-20 pt-24 pb-14 flex flex-col min-h-screen max-w-[1300px] mx-auto w-full">
         {/* Header */}
         <div className="mb-auto">
-          <div className="text-sm font-body text-white/80 mb-6 tracking-wide">
-            // Capabilities
+          <div className="text-xs uppercase tracking-[0.2em] font-body text-white/70 mb-3 flex items-center gap-2">
+            <span className="w-1.5 h-1.5 rounded-full bg-white" />
+            <span>// About Aryvanta Studio</span>
           </div>
-          <h2 className="font-heading italic text-6xl md:text-7xl lg:text-[6rem] leading-[0.9] tracking-[-3px] text-white whitespace-pre-line">
-            {'Studio craft,\nend to end'}
+          <h2 className="font-heading italic text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] leading-[0.95] tracking-[-2px] sm:tracking-[-3px] text-white">
+            About Aryvanta — <br className="hidden sm:block" />
+            <span className="text-white/80 font-normal">Founded by Aryan Sabharwal</span>
           </h2>
+          <p className="mt-5 text-sm sm:text-base text-white/85 font-body font-light leading-relaxed max-w-3xl">
+            Aryvanta is a modern digital technology and creative studio founded by Aryan Sabharwal. We specialize in AI automation, AI voice agents, websites, landing pages, SaaS tools, web applications, and commercial motion design. Operating from India, Aryvanta delivers high-performance digital systems for clients and brands globally.
+          </p>
         </div>
 
         {/* Cards Grid */}

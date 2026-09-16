@@ -8,6 +8,7 @@ import ProcessSection from './components/ProcessSection';
 import AiTechSection from './components/AiTechSection';
 import StatsSection from './components/StatsSection';
 import JournalSection from './components/JournalSection';
+import FAQSection from './components/FAQSection';
 import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
 
@@ -83,7 +84,10 @@ export default function App() {
           onSelectArticle={(article) => setSelectedArticle(article)}
         />
 
-        {/* Section 9: Scope Estimator & Contact */}
+        {/* Section 9: Frequently Asked Questions (SEO & Conversion) */}
+        <FAQSection />
+
+        {/* Section 10: Scope Estimator & Contact */}
         <ContactSection
           initialService={targetContactService}
           onOpenAI={handleOpenAI}
