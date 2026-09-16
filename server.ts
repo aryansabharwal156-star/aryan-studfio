@@ -1,4 +1,5 @@
 import express from 'express';
+import {createServer as createHttpServer} from 'http';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { createServer as createViteServer } from 'vite';
@@ -300,9 +301,14 @@ Be direct, sophisticated, and realistic.`;
 
 // Setup Vite / Static handling
 async function startServer() {
+  const httpServer = createHttpServer(app);
+
   if (process.env.NODE_ENV !== 'production') {
     const vite = await createViteServer({
-      server: { middlewareMode: true },
+      server: {
+        middlewareMode: true,
+        hmr: { server: httpServer },
+      },
       appType: 'spa',
     });
     app.use(vite.middlewares);
@@ -314,7 +320,7 @@ async function startServer() {
     });
   }
 
-  app.listen(PORT, '0.0.0.0', () => {
+  httpServer.listen(PORT, '0.0.0.0', () => {
     console.log(`Aryan Sabharwal Portfolio & Studio AI server running on http://0.0.0.0:${PORT}`);
   });
 }
