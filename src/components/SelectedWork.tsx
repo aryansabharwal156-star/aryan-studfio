@@ -29,7 +29,7 @@ export default function SelectedWork({ onSelectProject }: SelectedWorkProps) {
 
   const videoScale = useTransform(scrollYProgress, [0, 0.5, 1], [1.15, 1.0, 1.12]);
   const videoY = useTransform(scrollYProgress, [0, 1], ['-6%', '6%']);
-  const containerOpacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0.6, 1, 1, 0.7]);
+  const containerOpacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0.9, 1, 1, 0.9]);
 
   const categories = ['all', 'websites', 'stores', 'product design', 'ai + creative'];
 

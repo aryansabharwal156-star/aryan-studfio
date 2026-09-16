@@ -16,7 +16,7 @@ export default function ProcessSection() {
   // Scale: 1.0 -> 1.08 -> 1.0, TranslateY: 0 -> -6vh
   const videoScale = useTransform(scrollYProgress, [0, 0.5, 1], [1.08, 1.0, 1.08]);
   const videoY = useTransform(scrollYProgress, [0, 1], ['-6%', '6%']);
-  const containerOpacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0.55, 0.95, 0.95, 0.6]);
+  const containerOpacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0.9, 1, 1, 0.9]);
 
   return (
     <section 
@@ -29,14 +29,6 @@ export default function ProcessSection() {
         style={{ opacity: containerOpacity }}
         className="absolute inset-3 sm:inset-6 lg:inset-8 pointer-events-none z-0 rounded-[2rem] sm:rounded-[2.5rem] lg:rounded-[3rem] overflow-hidden border border-white/15 shadow-[0_0_90px_rgba(26,10,46,0.5),_0_0_100px_rgba(0,0,0,0.95)]"
       >
-        {/* Deep Space Fallback Gradient */}
-        <div 
-          className="absolute inset-0 z-0 pointer-events-none"
-          style={{
-            background: 'radial-gradient(ellipse at 30% 40%, #1a0a2e 0%, #0b0710 70%, #05050a 100%)',
-          }}
-        />
-
         <motion.video
           style={{ scale: videoScale, y: videoY }}
           autoPlay
@@ -44,21 +36,9 @@ export default function ProcessSection() {
           muted
           playsInline
           preload="auto"
-          className="w-full h-full object-cover opacity-60 filter contrast-110 brightness-105"
+          className="w-full h-full object-cover opacity-90 filter contrast-110 brightness-105"
           src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260813_092641_de52eb87-daf2-41db-92cb-7a56eae012a5.mp4"
         />
-
-        {/* Cinematic Fade Overlays */}
-        {/* Bottom Fade */}
-        <div className="absolute bottom-0 left-0 right-0 h-[35vh] bg-gradient-to-t from-[#05050a] via-[#05050a]/80 to-transparent pointer-events-none" />
-        {/* Top Fade */}
-        <div className="absolute top-0 left-0 right-0 h-[25vh] bg-gradient-to-b from-[#05050a] via-[#05050a]/75 to-transparent pointer-events-none" />
-        {/* Left Fade */}
-        <div className="absolute top-0 left-0 bottom-0 w-[20vw] bg-gradient-to-r from-[#05050a] via-[#05050a]/70 to-transparent pointer-events-none" />
-        {/* Right Fade */}
-        <div className="absolute top-0 right-0 bottom-0 w-[20vw] bg-gradient-to-l from-[#05050a] via-[#05050a]/70 to-transparent pointer-events-none" />
-        {/* Radial Vignette */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_transparent_30%,_rgba(5,5,10,0.85)_100%)] pointer-events-none" />
 
         {/* Subtle Inner Highlight Glow Ring */}
         <div className="absolute inset-0 rounded-[2rem] sm:rounded-[2.5rem] lg:rounded-[3rem] ring-1 ring-inset ring-white/15 pointer-events-none" />

@@ -2,13 +2,20 @@ import React, { useState, useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { servicesData } from '../data/portfolioData';
 import { ServiceItem } from '../types';
+import saasNatureImage from '../assets/images/saas_nature_resilience_1787826307138.jpg';
 import { 
   ArrowUpRight, 
   Globe, 
   ShoppingBag, 
   LayoutDashboard, 
   Video,
-  CheckCircle2
+  CheckCircle2,
+  ExternalLink,
+  Sparkles,
+  Layers,
+  Code2,
+  Calendar,
+  Eye
 } from 'lucide-react';
 
 interface ServicesSectionProps {
@@ -27,14 +34,15 @@ export default function ServicesSection({ onSelectService }: ServicesSectionProp
 
   const videoScale = useTransform(scrollYProgress, [0, 0.5, 1], [1.14, 1.0, 1.1]);
   const videoY = useTransform(scrollYProgress, [0, 1], ['-5%', '5%']);
-  const containerOpacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0.6, 1, 1, 0.65]);
+  const containerOpacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0.9, 1, 1, 0.9]);
 
   const getServiceIcon = (id: string) => {
     switch (id) {
       case 'websites':
         return <Globe className="w-5 h-5" />;
+      case 'landing-pages':
       case 'stores':
-        return <ShoppingBag className="w-5 h-5" />;
+        return <Layers className="w-5 h-5" />;
       case 'saas':
         return <LayoutDashboard className="w-5 h-5" />;
       case 'ugc':
@@ -62,16 +70,12 @@ export default function ServicesSection({ onSelectService }: ServicesSectionProp
           muted
           playsInline
           preload="auto"
-          className="w-full h-full object-cover opacity-55 filter contrast-125 brightness-110 blur-[0.2px]"
+          className="w-full h-full object-cover opacity-90 filter contrast-110 brightness-105"
           src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260808_112712_da9d53df-6d27-4b12-bdf6-aa9dc2622bdf.mp4"
         />
-
-        {/* Highlight Accent Glow & Vignette Overlays */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/50 to-black/85 pointer-events-none" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_transparent_20%,_rgba(0,0,0,0.85)_100%)] pointer-events-none" />
         
         {/* Luminous Inner Highlight Border */}
-        <div className="absolute inset-0 rounded-[2rem] sm:rounded-[2.5rem] lg:rounded-[3rem] ring-1 ring-inset ring-white/20 pointer-events-none" />
+        <div className="absolute inset-0 rounded-[2rem] sm:rounded-[2.5rem] lg:rounded-[3rem] ring-1 ring-inset ring-white/15 pointer-events-none" />
       </motion.div>
 
       {/* Top Divider */}
@@ -152,6 +156,183 @@ export default function ServicesSection({ onSelectService }: ServicesSectionProp
                       </div>
                     ))}
                   </div>
+
+                  {/* Interactive Openable Website Design Showcase for Viewers */}
+                  {service.id === 'websites' && (
+                    <div className="mt-6 rounded-xl overflow-hidden border border-white/20 bg-black/80 p-3.5 space-y-3 transition-all duration-300 group-hover:border-white/40 group-hover:bg-black/90 shadow-2xl">
+                      {/* Browser Header Bar */}
+                      <div className="flex items-center justify-between pb-2.5 border-b border-white/10 text-[11px]">
+                        <div className="flex items-center gap-1.5">
+                          <span className="w-2.5 h-2.5 rounded-full bg-red-500/80" />
+                          <span className="w-2.5 h-2.5 rounded-full bg-yellow-500/80" />
+                          <span className="w-2.5 h-2.5 rounded-full bg-green-500/80" />
+                          <span className="ml-2 font-mono text-[10px] text-white/60 truncate max-w-[140px] sm:max-w-[200px]">
+                            extraordinary-licorice-453602.netlify.app
+                          </span>
+                        </div>
+                        <a
+                          href="https://extraordinary-licorice-453602.netlify.app/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-[10px] font-body tracking-wider uppercase px-2.5 py-1 rounded-full bg-white text-black font-semibold hover:bg-white/90 transition-all flex items-center gap-1.5 cursor-pointer shadow-sm hover:scale-105"
+                          onClick={(e) => e.stopPropagation()}
+                        >
+                          <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                          <span>Open Live Site</span>
+                          <ExternalLink className="w-3 h-3 ml-0.5" />
+                        </a>
+                      </div>
+
+                      {/* Clickable Openable Website Card with Image */}
+                      <a
+                        href="https://extraordinary-licorice-453602.netlify.app/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group/site block relative rounded-lg overflow-hidden border border-white/15 bg-[#0a0a0f] transition-all hover:border-white/40 cursor-pointer"
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        {/* Live Website Preview Thumbnail / Header Visual */}
+                        <div className="relative w-full h-36 sm:h-40 overflow-hidden bg-[#0d0d14]">
+                          <img
+                            src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1000&q=80"
+                            alt="Live Website Portfolio Preview"
+                            referrerPolicy="no-referrer"
+                            className="w-full h-full object-cover object-top opacity-85 transition-transform duration-500 group-hover/site:scale-105 group-hover/site:opacity-100"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent" />
+                          
+                          {/* Live Overlay Badge */}
+                          <div className="absolute top-2.5 right-2.5 px-2 py-1 rounded-md bg-black/80 backdrop-blur-md border border-white/20 text-[10px] font-mono text-white flex items-center gap-1.5">
+                            <Sparkles className="w-3 h-3 text-emerald-400" />
+                            <span>Live Production</span>
+                          </div>
+
+                          {/* Overlay Title on Image */}
+                          <div className="absolute bottom-2.5 left-3 right-3 flex items-end justify-between">
+                            <div>
+                              <div className="text-[10px] font-mono uppercase tracking-widest text-emerald-400 font-semibold">
+                                Live Studio Flagship
+                              </div>
+                              <div className="font-heading italic text-base sm:text-lg text-white mt-0.5 font-medium leading-tight">
+                                Extraordinary Licorice Design
+                              </div>
+                            </div>
+                            <span className="p-1.5 rounded-full bg-white text-black shadow-lg transition-transform group-hover/site:translate-x-0.5 group-hover/site:-translate-y-0.5">
+                              <ExternalLink className="w-3.5 h-3.5" />
+                            </span>
+                          </div>
+                        </div>
+
+                        {/* Bottom Info Row */}
+                        <div className="p-3 bg-black/70 flex items-center justify-between text-xs text-white/80 border-t border-white/10">
+                          <span className="text-[11px] text-white/70 font-mono flex items-center gap-1">
+                            <span>Visit:</span>
+                            <span className="text-white underline underline-offset-2">extraordinary-licorice-453602.netlify.app</span>
+                          </span>
+                          <span className="text-[10px] text-emerald-400 font-mono uppercase tracking-wider font-semibold">
+                            Click to Launch ↗
+                          </span>
+                        </div>
+                      </a>
+                    </div>
+                  )}
+
+                  {/* Visual SaaS Design Showcase with Image and Viewer Link */}
+                  {service.id === 'saas' && (
+                    <div className="mt-6 rounded-xl overflow-hidden border border-white/20 bg-black/80 p-3.5 space-y-3 transition-all duration-300 group-hover:border-purple-500/40 group-hover:bg-black/90 shadow-2xl">
+                      {/* Browser Header Bar */}
+                      <div className="flex items-center justify-between pb-2.5 border-b border-white/10 text-[11px]">
+                        <div className="flex items-center gap-1.5">
+                          <span className="w-2.5 h-2.5 rounded-full bg-red-500/80" />
+                          <span className="w-2.5 h-2.5 rounded-full bg-yellow-500/80" />
+                          <span className="w-2.5 h-2.5 rounded-full bg-green-500/80" />
+                          <span className="ml-2 font-mono text-[10px] text-white/60 truncate max-w-[140px] sm:max-w-[200px]">
+                            voluble-tartufo-63c2d4.netlify.app
+                          </span>
+                        </div>
+                        <a
+                          href="https://voluble-tartufo-63c2d4.netlify.app/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-[10px] font-body tracking-wider uppercase px-2.5 py-1 rounded-full bg-purple-500 text-white font-semibold hover:bg-purple-400 transition-all flex items-center gap-1.5 cursor-pointer shadow-sm hover:scale-105"
+                          onClick={(e) => e.stopPropagation()}
+                        >
+                          <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
+                          <span>Watch Our Design</span>
+                          <ExternalLink className="w-3 h-3 ml-0.5" />
+                        </a>
+                      </div>
+
+                      {/* Clickable SaaS Design Showcase Card with Image */}
+                      <a
+                        href="https://voluble-tartufo-63c2d4.netlify.app/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group/saas block relative rounded-lg overflow-hidden border border-white/15 bg-[#090814] transition-all hover:border-purple-500/50 cursor-pointer"
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        {/* Nature Resilience SaaS Design Visual */}
+                        <div className="relative w-full h-44 sm:h-52 overflow-hidden bg-[#0a0818]">
+                          <img
+                            src={saasNatureImage}
+                            alt="Nature Resilience SaaS Platform Design Preview"
+                            referrerPolicy="no-referrer"
+                            className="w-full h-full object-cover object-center opacity-90 transition-transform duration-500 group-hover/saas:scale-105 group-hover/saas:opacity-100"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-black/20" />
+                          
+                          {/* Top Floating Capsule Navigation Mockup */}
+                          <div className="absolute top-2.5 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/20 text-[9px] font-mono text-white/90 flex items-center gap-2.5 shadow-lg max-w-[90%] truncate">
+                            <span className="font-bold text-purple-300">✕</span>
+                            <span className="hover:text-white transition-colors">Home</span>
+                            <span className="text-white/40">·</span>
+                            <span className="hover:text-white transition-colors">Projects</span>
+                            <span className="text-white/40">·</span>
+                            <span className="hover:text-white transition-colors">Pricing</span>
+                            <span className="text-white/40">·</span>
+                            <span className="hover:text-white transition-colors">About</span>
+                            <span className="px-2 py-0.5 rounded-full bg-white text-black font-semibold text-[8px]">Assistant 👤</span>
+                          </div>
+
+                          {/* Center Hero Typography */}
+                          <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 pt-4">
+                            <div className="text-[9px] font-mono text-white/80 flex items-center gap-1 mb-1">
+                              <span className="text-purple-300">⊙</span>
+                              <span>Get Nature on your <strong className="text-white font-semibold">Balance Sheet</strong></span>
+                            </div>
+                            <h4 className="text-sm sm:text-base md:text-lg font-heading italic font-bold text-white leading-tight drop-shadow-md max-w-sm">
+                              Measure Nature, Invest in Resilience, Grow Your Business
+                            </h4>
+                            <div className="mt-2 inline-flex items-center gap-1 px-3 py-1 rounded-full bg-white text-black font-medium text-[9px] shadow-lg">
+                              <Calendar className="w-2.5 h-2.5" />
+                              <span>Book a Call ↗</span>
+                            </div>
+                          </div>
+
+                          {/* Live Overlay Badge */}
+                          <div className="absolute bottom-2.5 right-2.5 px-2 py-1 rounded-md bg-black/80 backdrop-blur-md border border-purple-500/30 text-[9px] font-mono text-purple-300 flex items-center gap-1.5">
+                            <Sparkles className="w-3 h-3 text-purple-400" />
+                            <span>Viewer Preference</span>
+                          </div>
+                        </div>
+
+                        {/* Bottom Link for Viewers */}
+                        <div className="p-3 bg-black/80 flex items-center justify-between text-xs text-white/90 border-t border-white/10">
+                          <span className="text-[11px] text-white/70 font-mono flex items-center gap-1">
+                            <Eye className="w-3.5 h-3.5 text-purple-400" />
+                            <span className="text-purple-300 font-medium">Watch our SaaS Design:</span>
+                            <span className="text-white underline underline-offset-2 truncate max-w-[130px] sm:max-w-none">
+                              voluble-tartufo-63c2d4.netlify.app
+                            </span>
+                          </span>
+                          <span className="text-[10px] text-purple-300 font-mono uppercase tracking-wider font-semibold hover:text-white transition-colors flex items-center gap-1">
+                            <span>Explore Live</span>
+                            <span>↗</span>
+                          </span>
+                        </div>
+                      </a>
+                    </div>
+                  )}
                 </div>
 
                 {/* Bottom Action Bar */}

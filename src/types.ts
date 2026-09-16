@@ -1,4 +1,4 @@
-export type ServiceId = 'websites' | 'stores' | 'saas' | 'ugc';
+export type ServiceId = 'websites' | 'landing-pages' | 'stores' | 'saas' | 'ugc';
 
 export interface ServiceItem {
   id: ServiceId;

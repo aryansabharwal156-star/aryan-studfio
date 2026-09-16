@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useRef } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { journalArticles } from '../data/portfolioData';
 import { JournalArticle } from '../types';
 import { ArrowUpRight, Clock } from 'lucide-react';
@@ -8,9 +9,47 @@ interface JournalSectionProps {
 }
 
 export default function JournalSection({ onSelectArticle }: JournalSectionProps) {
+  const sectionRef = useRef<HTMLElement>(null);
+
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ['start end', 'end start'],
+  });
+
+  const videoScale = useTransform(scrollYProgress, [0, 0.5, 1], [1.12, 1.0, 1.1]);
+  const videoY = useTransform(scrollYProgress, [0, 1], ['-5%', '5%']);
+  const containerOpacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0.9, 1, 1, 0.9]);
+
   return (
-    <section id="journal" className="py-24 sm:py-32 px-6 lg:px-16 relative bg-black border-t border-white/10">
-      <div className="max-w-[1200px] mx-auto">
+    <section 
+      ref={sectionRef}
+      id="journal" 
+      className="py-24 sm:py-32 px-4 sm:px-6 lg:px-16 relative bg-black overflow-hidden"
+    >
+      {/* Curved Edge Video Container covering full section with scroll motion */}
+      <motion.div 
+        style={{ opacity: containerOpacity }}
+        className="absolute inset-3 sm:inset-6 lg:inset-8 pointer-events-none z-0 rounded-[2rem] sm:rounded-[2.5rem] lg:rounded-[3rem] overflow-hidden border border-white/15 shadow-[0_0_90px_rgba(0,0,0,0.95)]"
+      >
+        <motion.video
+          style={{ scale: videoScale, y: videoY }}
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="auto"
+          className="w-full h-full object-cover opacity-90 filter contrast-110 brightness-105"
+          src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260717_120352_eb988725-1351-43b3-8095-16e4a1005e3d.mp4"
+        />
+
+        {/* Subtle Inner Highlight Ring */}
+        <div className="absolute inset-0 rounded-[2rem] sm:rounded-[2.5rem] lg:rounded-[3rem] ring-1 ring-inset ring-white/15 pointer-events-none" />
+      </motion.div>
+
+      {/* Top Divider */}
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent z-10" />
+
+      <div className="max-w-[1200px] mx-auto relative z-10">
         {/* Section Header */}
         <div className="mb-16 sm:mb-20 max-w-2xl">
           <div className="text-xs font-body uppercase tracking-[0.2em] text-white/70 mb-3 flex items-center gap-2">

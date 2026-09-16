@@ -90,7 +90,7 @@ export default function Footer() {
                 aryansabharwal156@gmail.com
               </a>
               <a
-                href="https://wa.me/?text=Hi%20Aryan,%20I%20would%20like%20to%20discuss%20a%20project%20inquiry."
+                href="https://wa.me/916396438091"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-1 text-white hover:text-white/80 transition-colors font-medium"

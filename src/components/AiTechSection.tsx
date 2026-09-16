@@ -19,7 +19,7 @@ export default function AiTechSection({ onOpenAI }: AiTechSectionProps) {
 
   const videoScale = useTransform(scrollYProgress, [0, 0.5, 1], [1.12, 1.0, 1.1]);
   const videoY = useTransform(scrollYProgress, [0, 1], ['-5%', '5%']);
-  const containerOpacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0.55, 0.95, 0.95, 0.6]);
+  const containerOpacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0.9, 1, 1, 0.9]);
 
   const getNodeIcon = (category: string) => {
     switch (category) {
@@ -54,16 +54,9 @@ export default function AiTechSection({ onOpenAI }: AiTechSectionProps) {
           muted
           playsInline
           preload="auto"
-          className="w-full h-full object-cover opacity-55 filter contrast-110 brightness-105"
+          className="w-full h-full object-cover opacity-90 filter contrast-110 brightness-105"
           src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260813_115057_94c3699b-0fd1-4124-bcf3-3626bb8c1f77.mp4"
         />
-
-        {/* Cinematic Vignette & Dark Gradient Overlays */}
-        <div className="absolute bottom-0 left-0 right-0 h-[35vh] bg-gradient-to-t from-black via-black/80 to-transparent pointer-events-none" />
-        <div className="absolute top-0 left-0 right-0 h-[25vh] bg-gradient-to-b from-black via-black/75 to-transparent pointer-events-none" />
-        <div className="absolute top-0 left-0 bottom-0 w-[20vw] bg-gradient-to-r from-black via-black/70 to-transparent pointer-events-none" />
-        <div className="absolute top-0 right-0 bottom-0 w-[20vw] bg-gradient-to-l from-black via-black/70 to-transparent pointer-events-none" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_transparent_25%,_rgba(0,0,0,0.85)_100%)] pointer-events-none" />
 
         {/* Subtle Inner Highlight Ring */}
         <div className="absolute inset-0 rounded-[2rem] sm:rounded-[2.5rem] lg:rounded-[3rem] ring-1 ring-inset ring-white/15 pointer-events-none" />

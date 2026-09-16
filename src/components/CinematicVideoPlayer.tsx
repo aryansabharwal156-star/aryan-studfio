@@ -165,9 +165,9 @@ export default function CinematicVideoPlayer({
             ref={(el) => {
               videoRefs.current[index] = el;
             }}
-            className="absolute inset-0 w-full h-full object-cover opacity-35 filter blur-[0.3px]"
+            className="absolute inset-0 w-full h-full object-cover opacity-90"
             style={{
-              opacity: index === 0 ? 1 : 0,
+              opacity: index === 0 ? 0.95 : 0,
               transition: 'opacity 1s cubic-bezier(0.4, 0, 0.2, 1)',
             }}
             muted
@@ -180,23 +180,8 @@ export default function CinematicVideoPlayer({
         ))}
       </motion.div>
 
-      {/* Cinematic Gradients from snippet */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background:
-            'linear-gradient(to bottom, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.5) 30%, rgba(0,0,0,0.5) 70%, rgba(0,0,0,0.9) 100%)',
-        }}
-      />
-
-      {/* Subtle Vignette */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background:
-            'radial-gradient(ellipse at center, transparent 35%, rgba(0,0,0,0.75) 100%)',
-        }}
-      />
+      {/* Subtle Bottom Grounding Line */}
+      <div className="absolute inset-0 ring-1 ring-inset ring-white/10 pointer-events-none" />
 
       {/* Subtle inner border glow */}
       <div className="absolute inset-0 rounded-[2rem] sm:rounded-[2.5rem] lg:rounded-[3rem] ring-1 ring-inset ring-white/10 pointer-events-none" />

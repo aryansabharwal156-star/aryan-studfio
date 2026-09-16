@@ -37,31 +37,31 @@ export const servicesData: ServiceItem[] = [
     techStack: ['React', 'TypeScript', 'Tailwind CSS', 'GSAP', 'Next.js', 'Figma']
   },
   {
-    id: 'stores',
+    id: 'landing-pages',
     number: '02',
-    title: 'Online Stores',
-    tagline: 'Seamless commerce engines built to convert',
+    title: 'Landing Pages',
+    tagline: 'High-converting launchpads tailored for scale & speed',
     description:
-      'E-commerce experiences designed around products, customers, conversion, and a frictionless shopping journey.',
+      'High-impact landing pages engineered for maximum conversion, product launches, lead generation, and brand storytelling.',
     accent: 'Teal',
     accentColor: 'text-[#2F6F5E]',
     accentBg: 'bg-[#2F6F5E]',
     accentBorder: 'border-[#2F6F5E]',
     features: [
-      'Curated product catalogues & filter matrices',
-      'High-converting product detail pages',
-      'Frictionless slide-out & modal cart experiences',
-      'Optimized one-click checkout flows',
-      'Payment-ready infrastructure (Stripe, Razorpay, Shopify)'
+      'High-converting above-the-fold narrative structure',
+      'Persuasive value propositions & visual hierarchy',
+      'Micro-interactions, smooth scroll & engaging motion',
+      'Optimized CTA placement & frictionless lead capture',
+      'Blazing fast performance (95+ Google PageSpeed score)'
     ],
     deliverables: [
-      'Custom Shopify or Headless Storefront',
-      'Dynamic inventory & variant selector',
-      'Abandoned cart & email triggers',
-      'Mobile-optimized touch commerce',
-      'Analytics & pixel tracking setup'
+      'Custom Responsive Landing Page (Figma to Code)',
+      'A/B testing-ready modular layout sections',
+      'CRM & lead-gen integrations (HubSpot, Mailchimp, Stripe)',
+      'SEO metadata, open-graph & tracking pixel setup',
+      'Instant hosting deployment on Vercel/Netlify'
     ],
-    techStack: ['Shopify Liquid', 'Hydrogen', 'Next.js Commerce', 'Stripe', 'Tailwind']
+    techStack: ['React', 'Next.js', 'Tailwind CSS', 'Framer Motion', 'Figma']
   },
   {
     id: 'saas',

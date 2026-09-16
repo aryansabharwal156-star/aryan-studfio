@@ -392,7 +392,7 @@ export default function AIStudioSuiteModal({
           <div className="flex items-center gap-3">
             {/* Quick WhatsApp Link */}
             <a
-              href="https://wa.me/?text=Hi%20Aryan,%20I%20am%20exploring%20your%20portfolio%20AI%20and%20would%20like%20to%20discuss%20a%20project."
+              href="https://wa.me/916396438091"
               target="_blank"
               rel="noopener noreferrer"
               className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-body liquid-glass hover:bg-white/10 text-white/90 border border-white/10 transition-colors"
@@ -1083,7 +1083,7 @@ export default function AIStudioSuiteModal({
                 {estResult && (
                   <div className="mt-6 pt-4 border-t border-white/10 flex items-center justify-between gap-3">
                     <a
-                      href={`https://wa.me/?text=Hi%20Aryan,%20I%20generated%20a%20project%20scope%20for%20a%20${encodeURIComponent(estProjectType)}%20and%20would%20like%20to%20book%20a%20kickoff.`}
+                      href={`https://wa.me/916396438091?text=Hi%20Aryan,%20I%20generated%20a%20project%20scope%20for%20a%20${encodeURIComponent(estProjectType)}%20and%20would%20like%20to%20book%20a%20kickoff.`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex-1 py-2.5 rounded-xl bg-white text-black font-medium text-xs text-center hover:bg-white/90 transition-colors"

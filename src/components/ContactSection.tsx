@@ -40,11 +40,11 @@ export default function ContactSection({ initialService, onOpenAI }: ContactSect
 
   const videoScale = useTransform(scrollYProgress, [0, 0.5, 1], [1.12, 1.0, 1.1]);
   const videoY = useTransform(scrollYProgress, [0, 1], ['-5%', '5%']);
-  const containerOpacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0.55, 0.95, 0.95, 0.6]);
+  const containerOpacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0.9, 1, 1, 0.9]);
 
   const availableServices = [
     'Websites',
-    'Online Stores',
+    'Landing Pages',
     'SaaS Design',
     'UGC Ads',
     'AI-powered Experience'
@@ -115,16 +115,9 @@ export default function ContactSection({ initialService, onOpenAI }: ContactSect
           muted
           playsInline
           preload="auto"
-          className="w-full h-full object-cover opacity-55 filter contrast-110 brightness-105"
+          className="w-full h-full object-cover opacity-90 filter contrast-110 brightness-105"
           src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260622_204221_5339e40b-e73d-4ab0-9c65-79c18c66fd50.mp4"
         />
-
-        {/* Cinematic Fade Overlays & Radial Vignette */}
-        <div className="absolute bottom-0 left-0 right-0 h-[35vh] bg-gradient-to-t from-black via-black/85 to-transparent pointer-events-none" />
-        <div className="absolute top-0 left-0 right-0 h-[25vh] bg-gradient-to-b from-black via-black/75 to-transparent pointer-events-none" />
-        <div className="absolute top-0 left-0 bottom-0 w-[20vw] bg-gradient-to-r from-black via-black/70 to-transparent pointer-events-none" />
-        <div className="absolute top-0 right-0 bottom-0 w-[20vw] bg-gradient-to-l from-black via-black/70 to-transparent pointer-events-none" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_transparent_25%,_rgba(0,0,0,0.85)_100%)] pointer-events-none" />
 
         {/* Subtle Inner Highlight Ring */}
         <div className="absolute inset-0 rounded-[2rem] sm:rounded-[2.5rem] lg:rounded-[3rem] ring-1 ring-inset ring-white/15 pointer-events-none" />
@@ -197,18 +190,23 @@ export default function ContactSection({ initialService, onOpenAI }: ContactSect
 
               {/* WhatsApp Quick Link */}
               <a
-                href="https://wa.me/?text=Hi%20Aryan,%20I%20would%20like%20to%20discuss%20a%20project%20inquiry."
+                href="https://wa.me/916396438091"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-between gap-3 p-3.5 rounded-xl bg-white/[0.03] border border-white/10 hover:bg-white/[0.06] text-white transition-all cursor-pointer group"
               >
-                <div className="flex items-center gap-2.5">
-                  <MessageCircle className="w-4 h-4 text-white/80" />
-                  <span className="text-sm font-body font-medium">
-                    Chat on WhatsApp
-                  </span>
+                <div className="flex items-center gap-2.5 min-w-0">
+                  <MessageCircle className="w-4 h-4 text-white/80 shrink-0" />
+                  <div className="flex flex-col sm:flex-row sm:items-center sm:gap-2 min-w-0">
+                    <span className="text-sm font-body font-medium text-white">
+                      Chat on WhatsApp
+                    </span>
+                    <span className="text-xs text-white/60 font-mono">
+                      +91 6396438091
+                    </span>
+                  </div>
                 </div>
-                <ArrowUpRight className="w-3.5 h-3.5 text-white/60 group-hover:text-white transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                <ArrowUpRight className="w-3.5 h-3.5 text-white/60 group-hover:text-white transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 shrink-0" />
               </a>
             </div>
 
